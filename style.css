@@ -2,6 +2,10 @@
   --text-font: Roboto;
   --color: rgb(15, 187, 255);
 }
+
+
+
+
 body{
     font-family: var(--text-font);
     font-size: 30px;
@@ -38,6 +42,9 @@ body{
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 3fr 1fr;
+    background-color: rgb(238, 238, 238);
+    padding: 30px 50px 60px 40px;
+    gap:30px;
 }
 
 .lower{
@@ -51,7 +58,7 @@ body{
     gap: 50px
 }
 
-button{
+.navigate ul button{
     background: none;
     border: none;
     padding: 15px 50px 15px 50px;
@@ -121,12 +128,12 @@ input[type="search"] {
  border-radius: 20px
 }
 
-.upper img, .lower img{
+.upper img, .lower img, .trending div div img{
    
   border-radius: 50%; 
   object-fit: cover; 
 }
-.upper img{
+.upper img, .trending div div img{
     width: 70px;
     height: 70px;
 }
@@ -139,8 +146,10 @@ input[type="search"] {
 .project{
     grid-area: 1/ 1 / 3 / 2;
     display: grid;
-    grid-template-rows: 100px repeat(3, 1fr);
+    grid-template-rows: 60px repeat(3, 1fr);
     grid-template-columns: 1fr 1fr;
+    gap:40px;
+
 }
 
 .announcement{
@@ -151,6 +160,7 @@ input[type="search"] {
 }
 .your_projects{
     grid-area: 1/ 1 / 2 / 3;
+    
 }
 
 ul{
@@ -158,7 +168,7 @@ ul{
 }
 
 .icon {
-    fill: white;
+    
   width: 40px;
   height: 40px;
   
@@ -167,7 +177,8 @@ ul{
   height: 70px;
   }
 
-.upper .icon{fill: black;}
+.dashboard .icon, .menu .icon{fill: white;}
+
 
 .dashboard{
     display: flex;
@@ -183,4 +194,85 @@ ul{
     justify-content:flex-start;
     gap: 25px;
     margin:-10px
+}
+
+.card{
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px 20px 30px 60px;
+    border-left: 20px solid orange;
+    position: relative;
+    
+    
+    
+
+    
+}
+.card p:first-of-type{
+    margin-bottom: -18px;
+}
+
+.card p:first-of-type, .your_projects, 
+.announcement > p, 
+.trending > p, 
+.announcement div p:nth-of-type(odd),
+.trending div div p:nth-of-type(odd){
+    font-weight: bold;
+}
+
+.card p:nth-of-type(2), 
+.announcement div p:nth-of-type(odd){
+    font-size: 24px;
+    margin-bottom: -10px;
+}
+.announcement div p:nth-of-type(2n){
+    font-size: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgb(207, 207, 207);
+}
+.announcement div p:last-of-type{
+ border-bottom: none;
+}
+
+.trending div div p{
+    font-size: 24px;
+}
+
+.announcement div{
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px 50px 30px 50px;
+}
+.trending div{
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 30px;
+}
+
+.trending div div{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    }
+
+.trending div div img{
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.trending div div p:first-of-type {
+    grid-area: 1 / 2 / 2 / 3;
+    margin-top: 5px;
+    margin-left: -20px;
+}
+
+.trending div div p:nth-of-type(2) {
+    grid-area: 2 / 2 / 3 / 3;
+    margin-top: -15px;
+    margin-left: -20px;
+}
+
+.add_button{
+    position: absolute;
+    bottom:0;
+    right: 0;
 }
